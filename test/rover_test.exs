@@ -19,6 +19,13 @@ defmodule RoverTest do
     assert Subject.rotate("R", "W") == "N"
   end
 
+  test "#forward returns the placement after moving forward" do
+    assert Subject.forward("1 2", "N") == "1 3"
+    assert Subject.forward("1 2", "E") == "2 2"
+    assert Subject.forward("1 2", "S") == "1 1"
+    assert Subject.forward("1 2", "W") == "0 2"
+  end
+
   def directions, do: ["1 2 N\nLMLMLMLMM"]
   def boundries, do: ["5 5"]
 end
