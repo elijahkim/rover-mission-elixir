@@ -1,8 +1,9 @@
 defmodule RoverTest do
   use ExUnit.Case
-  doctest Rover
 
-  test "the truth" do
-    assert 1 + 1 == 2
+  alias Rover.Rover, as: Sujbect
+
+  test "Rover.Rover#process returns the proper coordinates" do
+    assert Subject.process(["1 2 N"], ["LMLMLMLMM"], ["5"], ["5"])
   end
 end
