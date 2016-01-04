@@ -33,7 +33,7 @@ defmodule Rover.CLI do
     for rover <- Enum.chunk(rovers, 2) do
       rover
       |> String.split(rover)
-      |> Rover.Rover.process(boundires)
+      |> Rover.Rover.process(boundries)
     end
   end
 end

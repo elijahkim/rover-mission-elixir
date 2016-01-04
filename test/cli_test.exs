@@ -10,5 +10,7 @@ defmodule CLITest do
 
   test "{:ok, file} returned if an existing file is given" do
     file_path = "test/support/input.txt"
+    {:ok, match} = Subject.parse_args([file_path])
+    assert match
   end
 end
