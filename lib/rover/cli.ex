@@ -28,12 +28,9 @@ defmodule Rover.CLI do
 
   def process({:ok, file}) do
     [boundries | rovers] = String.split(file, "\n")
-    boundries = String.split(boundries)
 
     for rover <- Enum.chunk(rovers, 2) do
-      rover
-      |> String.split(rover)
-      |> Rover.Rover.process(boundries)
+      rover |> Rover.Rover.process(boundries)
     end
   end
 end
